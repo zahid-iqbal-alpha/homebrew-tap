@@ -7,7 +7,6 @@ class GrappleCli < Formula
   def install
     bin.install "grpl"
   end
-  
   test do
     system "#{bin}/grpl", "--version"
   end
