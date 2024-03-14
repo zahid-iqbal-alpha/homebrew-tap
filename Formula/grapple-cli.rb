@@ -17,7 +17,7 @@ class GrappleCli < Formula
 
   url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
 
-  sha256 do
+  sha256 do |version|
     url = "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
     file = Pathname.new("#{version}.tar.gz")
     downloaded_file = file.basename
