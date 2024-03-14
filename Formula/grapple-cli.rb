@@ -4,7 +4,7 @@ class GrappleCli < Formula
 
   def self.latest_release_version(repo_owner, repo_name)
     url = "https://api.github.com/repos/#{repo_owner}/#{repo_name}/releases/latest"
-    response = URI.open(url)
+    response = URI.parse(url).open
     latest_release = JSON.parse(response.read)
     latest_release["tag_name"]
   end
