@@ -17,12 +17,10 @@ class GrappleCli < Formula
 
   url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
 
-  sha256 do |version|
+  sha256
     url = "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
-    file = Pathname.new("#{version}.tar.gz")
-    downloaded_file = file.basename
-    Kernel.system "curl -L #{url} -o #{downloaded_file}"
-    Digest::SHA256.file(downloaded_file).hexdigest
+    content = URI.open(url).read
+    Digest::SHA256.hexdigest(content)
   end
 
   def install
