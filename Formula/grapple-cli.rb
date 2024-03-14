@@ -7,6 +7,7 @@ class GrappleCli < Formula
   def install
     libexec.install Dir["*"]
     bin.write_exec_script (libexec/"grpl.sh")
+  end
   test do
     system "#{bin}/grpl", "--version"
   end
