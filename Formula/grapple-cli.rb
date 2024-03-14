@@ -15,7 +15,7 @@ class GrappleCli < Formula
 
   version latest_release_version("grapple-solutions", "grapple-cli")
 
-  url "https://github.com/grapple-solutions/grapple-cli/archive/v#{version}.tar.gz"
+  url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
 
   sha256 Digest::SHA2.file("#{version}.tar.gz").hexdigest
 
