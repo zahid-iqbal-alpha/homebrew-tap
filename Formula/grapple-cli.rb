@@ -2,7 +2,7 @@ class GrappleCli < Formula
   desc "Command-line interface for Grapple"
   homepage "https://github.com/grapple-solutions/grapple-cli"
 
-  def latest_release_version(repo_owner, repo_name)
+  def self.latest_release_version(repo_owner, repo_name)
     url = "https://api.github.com/repos/#{repo_owner}/#{repo_name}/releases/latest"
     response = URI.open(url)
     latest_release = JSON.parse(response.read)
