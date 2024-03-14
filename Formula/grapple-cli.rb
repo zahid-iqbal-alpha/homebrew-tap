@@ -17,12 +17,6 @@ class GrappleCli < Formula
 
   url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
 
-  sha256
-    url = "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
-    content = URI.open(url).read
-    Digest::SHA256.hexdigest(content)
-  end
-
   def install
     libexec.install Dir["*"]
     bin.write_exec_script (libexec/"grpl")
