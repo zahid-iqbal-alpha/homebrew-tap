@@ -17,7 +17,13 @@ class GrappleCli < Formula
 
   url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
 
-  sha256 Digest::SHA2.file("#{version}.tar.gz").hexdigest
+  sha256 do
+    url = "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/#{version}.tar.gz"
+    file = Pathname.new("#{version}.tar.gz")
+    downloaded_file = file.basename
+    Kernel.system "curl -L #{url} -o #{downloaded_file}"
+    Digest::SHA256.file(downloaded_file).hexdigest
+  end
 
   def install
     libexec.install Dir["*"]
