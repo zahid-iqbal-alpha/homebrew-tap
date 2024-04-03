@@ -7,12 +7,7 @@ class GrappleCli < Formula
   homepage "https://github.com/grapple-solutions/grapple-cli"
 
   def self.latest_release_version(repo_owner, repo_name)
-    release = "Pre-release"
-    # release_type = ARGV.last
-    # if release_type == "Pre-release"
-    #   release = "Pre-release"
-    # end
-    url = "https://api.github.com/repos/#{repo_owner}/#{repo_name}/releases/#{release}"
+    url = "https://api.github.com/repos/#{repo_owner}/#{repo_name}/releases/Pre-release"
     response = URI.parse(url).open
     latest_release = JSON.parse(response.read)
     latest_release["tag_name"]
