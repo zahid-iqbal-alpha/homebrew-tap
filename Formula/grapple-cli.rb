@@ -6,7 +6,7 @@ class GrappleCli < Formula
   desc "Command-line interface for Grapple"
   homepage "https://github.com/grapple-solutions/grapple-cli"
 
-  url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/0.2.49.tar.gz"
+  url "https://github.com/grapple-solutions/grapple-cli/archive/refs/tags/0.2.51.tar.gz"
 
   def install
     libexec.install Dir["*"]
